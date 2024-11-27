@@ -17,7 +17,7 @@ def obter_tipo():
         print("2 - Somente contas tipo débito")
         print("3 - Todas as contas")
 
-    escolha = input("Digite uma opção: ")
-    if escolha in opcao_tipo:
-        return opcao_tipo[escolha]
-    print("\nOpção inválida")
+        escolha = input("Digite uma opção: ")
+        if escolha in opcao_tipo:
+            return opcao_tipo[escolha]
+        print("\nOpção inválida")
