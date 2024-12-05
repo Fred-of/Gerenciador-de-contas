@@ -1,9 +1,8 @@
-import servicos
-import servicos.obter_contas
+from servicos import obter_contas
 
 def executar(tipo):
    
-    contas = servicos.obter_contas.executar()
+    contas = obter_contas.executar()
 
     if tipo != "todos":
         # for conta in contas:

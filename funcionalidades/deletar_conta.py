@@ -25,6 +25,8 @@ def executar(id_conta):
         
         contas_filtradas = [conta for conta in contas if conta.get("id") != id_conta]
 
+        foi_deletado = atualizar_contas.executar(contas_filtradas)
+
         atualizar_contas.executar(contas_filtradas)
         if foi_deletado:
             print("Conta excluída com sucesso")

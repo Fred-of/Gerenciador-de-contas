@@ -1,5 +1,4 @@
-import funcionalidades
-import funcionalidades.listar_contas_por_tipo
+from funcionalidades import listar_contas_por_tipo 
 
 opcao_tipo = {
     "1": "crédito",
@@ -8,7 +7,7 @@ opcao_tipo = {
 }
 def executar():
     tipo = obter_tipo()
-    funcionalidades.listar_contas_por_tipo.executar(tipo=tipo)
+    listar_contas_por_tipo.executar(tipo=tipo)
 
 def obter_tipo():
     escolha = ""

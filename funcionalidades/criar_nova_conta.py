@@ -1,5 +1,4 @@
-from datetime import datetime
-from utilidades import solicitar_status, solicitar_tipo, validar_data
+from funcionalidades.utilidades import solicitar_status, solicitar_tipo, validar_data
 from servicos import obter_proximo_id_conta, salvar_conta
 
 
@@ -10,11 +9,15 @@ def executar():
 
     descricao = input("Qual é a descrição?")
     valor = input("Qual é o valor?")
-    tipo = solicitar_tipo("Qual é o tipo?")
+    tipo = solicitar_tipo.executar("Qual é o tipo?")
     categoria = input("Qual é a categoria?")
-    data_vencimento = validar_data(input("Qual é a data de vencimento? (DD/MM/YYYY)"))
-    data_pagamento = validar_data(input("Qual é a data de pagamento? (DD/MM/YYYY)"))
+    data_vencimento = validar_data.executar(input("Qual é a data de vencimento? (DD/MM/YYYY)"))
     status = solicitar_status.executar()
+    data_pagamento = input("Qual é a data de pagamento? (DD/MM/YYYY)")
+    
+    if status == "pago":
+        data_pagamento = validar_data.executar(data_pagamento)
+ 
 
    
 
@@ -26,7 +29,7 @@ def executar():
         "categoria": categoria,
         "data_vencimento": data_vencimento,
         "data_pagamento": data_pagamento,
-        "status": status
+        "status": status,
     }
 
     foi_persistido = salvar_conta.executar(nova_conta)
